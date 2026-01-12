@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaRoute, FaGlassCheers, FaClock } from "react-icons/fa";
@@ -46,7 +46,7 @@ export default function ServicesSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Animate each service card
     serviceRefs.current.forEach((card, index) => {
       if (!card) return;

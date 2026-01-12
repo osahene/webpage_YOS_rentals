@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -23,7 +23,7 @@ export default function ContactSection() {
     message: "",
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Animate section entrance
     gsap.from(".contact-content", {
       y: 100,

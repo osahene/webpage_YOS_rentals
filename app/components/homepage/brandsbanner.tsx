@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import {
   SiToyota,
@@ -29,7 +29,7 @@ export default function BrandsBanner() {
   const [isHovered, setIsHovered] = useState(false);
   const [scrollSpeed, setScrollSpeed] = useState(1);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const banner = bannerRef.current;
     if (!banner) return;
 

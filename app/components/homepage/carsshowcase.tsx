@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaStar, FaArrowRight } from "react-icons/fa";
@@ -96,7 +96,7 @@ export default function CarsShowcase() {
   }, []);
 
   // Simple image hover animation
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (hoveredCard !== null) {
       const imgElement = document.getElementById(`car-image-${hoveredCard}`);
       if (imgElement) {

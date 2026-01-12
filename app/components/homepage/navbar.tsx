@@ -1,8 +1,7 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap/gsap-core";
+import { useLayoutEffect, useRef, useState } from "react";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaWhatsapp,
@@ -20,7 +19,7 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
+  useLayoutEffect(() => {
     if (!navRef.current) return;
     // 1. Initial State: Hidden and moved up
     gsap.set(navRef.current, { y: -100, opacity: 0, xPercent: -50 });

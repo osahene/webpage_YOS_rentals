@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useLayoutEffect, useState, useRef } from "react";
 import { gsap } from "gsap";
 
 interface TypewriterProps {
@@ -21,7 +21,7 @@ export default function Typewriter({
   const [isDeleting, setIsDeleting] = useState(false);
   const textRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const currentPhrase = phrases[currentPhraseIndex];
 
     const timer = setTimeout(
@@ -72,7 +72,7 @@ export default function Typewriter({
     <span className="inline-block">
       <span
         ref={textRef}
-        className="font-bold text-blue-600 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
       >
         {currentText}
       </span>
