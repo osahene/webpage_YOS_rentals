@@ -14,6 +14,7 @@ import Typewriter from "../homepage/Typewriter";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
+  // const [mounted, setMounted] = useState(false);
   const carRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 

@@ -15,7 +15,7 @@ const cars = [
     rating: 4.9,
     description: "Luxury sedan with premium features",
     price: "$299/day",
-    image: "/image/corolla-2013.png", // Changed from .glb to .png
+    image: "/image/corolla2013.png", // Changed from .glb to .png
     features: ["Premium Sound", "Heated Seats", "Panoramic Roof"],
   },
   {
@@ -25,7 +25,7 @@ const cars = [
     rating: 4.8,
     description: "Sporty SUV with excellent handling",
     price: "$249/day",
-    image: "/image/honda civic.png",
+    image: "/image/hondacivic.png",
     features: ["Sport Mode", "Premium Interior", "Advanced Safety"],
   },
   {
@@ -35,7 +35,7 @@ const cars = [
     rating: 4.7,
     description: "Premium SUV for any terrain",
     price: "$349/day",
-    image: "/image/honda-crv-2015.png",
+    image: "/image/hondacrv.png",
     features: ["All-Terrain", "Luxury Package", "Climate Control"],
   },
   {
@@ -45,7 +45,7 @@ const cars = [
     rating: 4.6,
     description: "Reliable and fuel-efficient sedan",
     price: "$89/day",
-    image: "/image/rav-4-2017.png",
+    image: "/image/rav4.png",
     features: ["Fuel Efficient", "Spacious", "Safety Plus"],
   },
 ];
