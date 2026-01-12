@@ -67,15 +67,15 @@ export default function Hero() {
       className="relative min-h-screen bg-img flex flex-col items-center justify-center
                  bg-linear-to-b from-black to-neutral-900 overflow-hidden"
     >
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 justify-center-safe items-center">
+      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
         {/* Text */}
         <div ref={textRef} className="text-white space-y-6">
-          <div className="text-left mb-12 hero-content">
+          <div className="text-center mb-10 hero-content">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
-              YOS Rental
+              YOS Car Rentals
             </h1>
             <div className="text-xl md:text-2xl text-gray-600 mb-2">
-              We give you{" "}
+              We offer you{" "}
               <span className="inline-block min-w-75 h-8">
                 <Typewriter
                   phrases={[
