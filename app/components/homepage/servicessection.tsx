@@ -1,6 +1,7 @@
 "use client";
 
 import { useLayoutEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaRoute, FaGlassCheers, FaClock } from "react-icons/fa";
@@ -43,6 +44,7 @@ const services = [
 ];
 
 export default function ServicesSection() {
+  const router = useRouter();
   const sectionRef = useRef<HTMLDivElement>(null);
   const serviceRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -91,6 +93,10 @@ export default function ServicesSection() {
     });
   }, []);
 
+  const handleLearnMore = (serviceId: number) => {
+    router.push(`/services/${serviceId}`);
+  };
+
   return (
     <section ref={sectionRef} className="py-20 px-12 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -121,7 +127,7 @@ export default function ServicesSection() {
               >
                 {/* Image/Animation Container */}
                 <div className="lg:w-1/2">
-                  <div className="relative h-70 md:h-80 rounded-3xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
+                  <div className="relative h-35 md:h-80 rounded-3xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
                     <Image
                       src={service.image}
                       alt={service.alt}
@@ -153,7 +159,10 @@ export default function ServicesSection() {
                     ))}
                   </ul>
 
-                  <button className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300 transform hover:scale-105">
+                  <button
+                    onClick={() => handleLearnMore(service.id)}
+                    className="bg-black text-white px-6 py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-300 transform hover:scale-105"
+                  >
                     Learn More
                   </button>
                 </div>

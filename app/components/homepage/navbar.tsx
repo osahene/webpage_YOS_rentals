@@ -76,7 +76,7 @@ export default function Navbar() {
             {/* Logo */}
             <div className="hidden md:block">
               <span className="font-bold text-xl text-gradient">
-                YOS Rental
+                YOS Car Rentals
               </span>
             </div>
 

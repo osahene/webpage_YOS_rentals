@@ -53,7 +53,7 @@ export default function Typewriter({
       gsap.fromTo(
         textRef.current,
         { opacity: 0, y: 10 },
-        { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }
+        { opacity: 1, y: 0, duration: 0.2, ease: "power2.out" }
       );
     }
 
@@ -72,7 +72,7 @@ export default function Typewriter({
     <span className="inline-block">
       <span
         ref={textRef}
-        className="font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+        className="font-bold bg-linear-to-r from-white to-blue-700 bg-clip-text text-transparent"
       >
         {currentText}
       </span>

@@ -3,6 +3,7 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRouter } from "next/navigation";
 import { FaStar, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
@@ -15,7 +16,7 @@ const cars = [
     rating: 4.9,
     description: "Luxury sedan with premium features",
     price: "$299/day",
-    image: "/image/corolla2013.png", // Changed from .glb to .png
+    image: "/image/corolla2013.png",
     features: ["Premium Sound", "Heated Seats", "Panoramic Roof"],
   },
   {
@@ -54,6 +55,7 @@ export default function CarsShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const carRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const router = useRouter();
 
   useLayoutEffect(() => {
     // Parallax effect on scroll
@@ -217,7 +219,10 @@ export default function CarsShowcase() {
                         per day
                       </span>
                     </div>
-                    <button className="bg-linear-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg">
+                    <button
+                      onClick={() => router.push(`/cars/${car.id}`)}
+                      className="bg-linear-to-r from-blue-600 to-purple-600 text-white p-3 rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-110 hover:shadow-lg"
+                    >
                       <FaArrowRight />
                     </button>
                   </div>
@@ -228,7 +233,10 @@ export default function CarsShowcase() {
         </div>
 
         <div className="text-center">
-          <button className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 group">
+          <button
+            onClick={() => router.push("/cars")}
+            className="bg-linear-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-2 group"
+          >
             <span>View More Vehicles</span>
             <FaArrowRight className="group-hover:translate-x-2 transition-transform duration-300" />
           </button>

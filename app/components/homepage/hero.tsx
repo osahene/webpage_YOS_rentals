@@ -1,8 +1,8 @@
 "use client";
 
 import { useLayoutEffect, useRef, useState } from "react";
-// import Image from "next/image";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaArrowDown,
@@ -14,9 +14,9 @@ import Typewriter from "../homepage/Typewriter";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
-  // const [mounted, setMounted] = useState(false);
   const carRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const formRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
@@ -74,7 +74,7 @@ export default function Hero() {
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gradient">
               YOS Car Rentals
             </h1>
-            <div className="text-xl md:text-2xl text-gray-600 mb-2">
+            <div className="text-xl md:text-2xl mb-2">
               We offer you{" "}
               <span className="inline-block min-w-75 h-8">
                 <Typewriter
@@ -186,7 +186,7 @@ export default function Hero() {
 
           <div className="text-center">
             <button
-              type="submit"
+              onClick={() => router.push("/cars")}
               className="bg-black text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 flex items-center justify-center mx-auto space-x-2"
             >
               <FaCar />

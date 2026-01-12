@@ -21,7 +21,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold mb-6 text-gradient">
-              YOS Rental
+              YOS Car Rentals
             </h3>
             <p className="text-gray-400 mb-6">
               Delivering premium car rental experiences with unmatched service
@@ -92,9 +92,9 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4 text-gray-400">
-              <p>123 Luxury Drive, Premium City</p>
-              <p>+1 (555) 123-4567</p>
-              <p>hello@yosrental.com</p>
+              <p>Patasi, Kumasi</p>
+              <p>+233 546 213 027</p>
+              <p>info@yosrental.com</p>
               <p>24/7 Customer Support</p>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              &copy; {currentYear} YOS Rental. All rights reserved.
+              &copy; {currentYear} YOS Car Rentals. All rights reserved.
             </p>
 
             <div className="flex items-center space-x-6 text-sm text-gray-400">
