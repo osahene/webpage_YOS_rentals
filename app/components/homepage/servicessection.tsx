@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaRoute, FaCarSide, FaGlassCheers, FaClock } from "react-icons/fa";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,35 +15,30 @@ const services = [
     description:
       "Explore the city in style with our guided tour services. Perfect for tourists and business travelers.",
     icon: FaRoute,
-    image: "/services/tour.jpg",
+    image: "/services/car map.png",
     features: ["Guided tours", "Multi-language guides", "Custom routes"],
+    alt: "City tour",
   },
+
   {
     id: 2,
-    title: "Pick & Drop",
-    description:
-      "Reliable airport and hotel transfers. We ensure you reach your destination safely and on time.",
-    icon: FaCarSide,
-    image: "/services/pick-drop.jpg",
-    features: ["24/7 Service", "Flight tracking", "Meet & greet"],
-  },
-  {
-    id: 3,
     title: "Wedding Chauffeur",
     description:
       "Make your special day perfect with our luxury wedding car services. Elegance and reliability guaranteed.",
     icon: FaGlassCheers,
-    image: "/services/wedding.jpg",
+    image: "/services/wedding chauffeur.jpg",
     features: ["Luxury cars", "Professional chauffeurs", "Decorations"],
+    alt: "chauffeur",
   },
   {
-    id: 4,
+    id: 3,
     title: "24-Hour Town Ride",
     description:
       "Available round the clock for your transportation needs. Safety and comfort are our priorities.",
     icon: FaClock,
-    image: "/services/24-hour.jpg",
+    image: "/services/24hour.jpg",
     features: ["24/7 availability", "Emergency support", "Comfortable rides"],
+    alt: "town ride",
   },
 ];
 
@@ -125,31 +121,16 @@ export default function ServicesSection() {
               >
                 {/* Image/Animation Container */}
                 <div className="lg:w-1/2">
-                  <div className="relative h-80 md:h-96 rounded-3xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
-                    {/* Animated SVG Path */}
-                    <svg className="absolute inset-0 w-full h-full">
-                      <path
-                        d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z"
-                        className="fill-blue-500/10"
-                      />
-                      <path
-                        d="M0,200 C150,100 350,300 500,200 L500,00 L0,0 Z"
-                        className="fill-purple-500/10"
-                      />
-                    </svg>
-
-                    {/* Icon Animation */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="relative">
-                        <div className="w-32 h-32 rounded-full bg-linear-to-r from-blue-500 to-purple-500 flex items-center justify-center">
-                          <Icon className="text-white text-5xl" />
-                        </div>
-                        <div className="absolute inset-0 rounded-full border-4 border-blue-500/30 animate-ping"></div>
-                      </div>
-                    </div>
+                  <div className="relative h-70 md:h-80 rounded-3xl overflow-hidden bg-linear-to-br from-gray-100 to-gray-200">
+                    <Image
+                      src={service.image}
+                      alt={service.alt}
+                      width={1000}
+                      height={900}
+                      content="fill"
+                    />
                   </div>
                 </div>
-
                 {/* Content */}
                 <div className="lg:w-1/2">
                   <div className="flex items-center mb-4">

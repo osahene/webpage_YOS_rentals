@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -17,9 +17,10 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Navbar() {
   //   const [isVisible, setIsVisible] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const navRef = useRef(null);
+  const navRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    if (!navRef.current) return;
     // 1. Initial State: Hidden and moved up
     gsap.set(navRef.current, { y: -100, opacity: 0, xPercent: -50 });
 
@@ -37,8 +38,9 @@ export default function Navbar() {
     });
 
     return () => {
+      // ScrollTrigger.getAll().forEach((t) => t.kill());
+      ScrollTrigger.refresh();
       tl.kill();
-      ScrollTrigger.getAll().forEach((t) => t.kill());
     };
   }, []);
 
@@ -66,7 +68,8 @@ export default function Navbar() {
       <div
         ref={navRef}
         /* Centering Logic: left-1/2 and fixed width or whitespace handling */
-        className="fixed top-6 left-1/2 z-50 w-auto transition-shadow"
+        className="fixed top-6 left-1/2 -translate-x-1/2
+        z-50 transform-gpu"
       >
         <div className="backdrop-blur-xl bg-white/90 border border-gray-200 rounded-full px-6 py-3 shadow-lg">
           <div className="flex items-center justify-between space-x-8">

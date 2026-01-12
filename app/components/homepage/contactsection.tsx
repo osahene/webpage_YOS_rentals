@@ -73,7 +73,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 contact-content">
             Lets{" "}
-            <span className="text-blue-600 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Start Your Journey
             </span>
           </h2>
@@ -88,7 +88,7 @@ export default function ContactSection() {
           <div className="contact-content">
             <div
               ref={mapRef}
-              className="relative h-full min-h-[400px] rounded-3xl overflow-hidden bg-linear-to-br from-blue-50 to-purple-50"
+              className="relative h-full min-h-100 rounded-3xl overflow-hidden bg-linear-to-br from-blue-50 to-purple-50"
             >
               {/* Map Container with Animated Border */}
               <div className="map-border absolute inset-0 border-4 border-transparent rounded-3xl"></div>
@@ -101,19 +101,21 @@ export default function ContactSection() {
                     <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-20"></div>
                   </div>
 
-                  <h3 className="text-2xl font-bold mb-4">Find Us Here</h3>
+                  <h3 className="text-2xl font-bold text-violet-400 mb-4">
+                    Find Us Here
+                  </h3>
                   <div className="space-y-3 text-gray-600">
                     <p className="flex items-center justify-center">
                       <FaMapMarkerAlt className="mr-2" />
-                      123 Luxury Drive, Premium City
+                      Patasi, Kumasi
                     </p>
                     <p className="flex items-center justify-center">
                       <FaPhone className="mr-2" />
-                      +1 (555) 123-4567
+                      +233 546 213 027
                     </p>
                     <p className="flex items-center justify-center">
                       <FaEnvelope className="mr-2" />
-                      hello@yosrental.com
+                      info@yosrental.com
                     </p>
                   </div>
 

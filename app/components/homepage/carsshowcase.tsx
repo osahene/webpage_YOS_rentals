@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FaStar, FaArrowRight } from "react-icons/fa";
@@ -15,7 +15,7 @@ const cars = [
     rating: 4.9,
     description: "Luxury sedan with premium features",
     price: "$299/day",
-    image: "/image/corolla 2013.png", // Changed from .glb to .png
+    image: "/image/corolla-2013.png", // Changed from .glb to .png
     features: ["Premium Sound", "Heated Seats", "Panoramic Roof"],
   },
   {
@@ -35,7 +35,7 @@ const cars = [
     rating: 4.7,
     description: "Premium SUV for any terrain",
     price: "$349/day",
-    image: "/image/honda crv 2015.png",
+    image: "/image/honda-crv-2015.png",
     features: ["All-Terrain", "Luxury Package", "Climate Control"],
   },
   {
@@ -45,7 +45,7 @@ const cars = [
     rating: 4.6,
     description: "Reliable and fuel-efficient sedan",
     price: "$89/day",
-    image: "/image/rav 4 2017.png",
+    image: "/image/rav-4-2017.png",
     features: ["Fuel Efficient", "Spacious", "Safety Plus"],
   },
 ];
@@ -55,7 +55,7 @@ export default function CarsShowcase() {
   const carRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Parallax effect on scroll
     carRefs.current.forEach((card) => {
       if (!card) return;
@@ -92,6 +92,7 @@ export default function CarsShowcase() {
       opacity: 0,
       duration: 1,
     });
+    ScrollTrigger.refresh();
   }, []);
 
   // Simple image hover animation

@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { useLayoutEffect, useRef, useState } from "react";
+// import Image from "next/image";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaArrowDown,
   FaCalendarAlt,
@@ -10,6 +11,7 @@ import {
   FaCar,
 } from "react-icons/fa";
 import Typewriter from "../homepage/Typewriter";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Hero() {
   const carRef = useRef<HTMLDivElement>(null);
@@ -23,7 +25,7 @@ export default function Hero() {
     endDate: "",
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     gsap.from(textRef.current, {
       y: 50,
       opacity: 0,
@@ -49,6 +51,7 @@ export default function Hero() {
         end: "bottom top",
       },
     });
+    ScrollTrigger.refresh();
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -60,10 +63,10 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center
+      className="relative min-h-screen bg-img flex flex-col items-center justify-center
                  bg-linear-to-b from-black to-neutral-900 overflow-hidden"
     >
-      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 grid md:grid-cols-2 gap-12 justify-center-safe items-center">
         {/* Text */}
         <div ref={textRef} className="text-white space-y-6">
           <div className="text-left mb-12 hero-content">
@@ -72,7 +75,7 @@ export default function Hero() {
             </h1>
             <div className="text-xl md:text-2xl text-gray-600 mb-2">
               We give you{" "}
-              <span className="inline-block min-w-[300px] h-8">
+              <span className="inline-block min-w-75 h-8">
                 <Typewriter
                   phrases={[
                     "affordable service",
@@ -86,15 +89,16 @@ export default function Hero() {
         </div>
 
         {/* Car Image */}
-        <div ref={carRef} className="relative w-full h-[300px] md:h-[420px]">
+        {/* <div ref={carRef} className="relative w-full h-75 md:h-105">
           <Image
             src="/assets/range.png" // place in /public
             alt="Luxury car"
             fill
+            sizes="100"
             className="object-contain"
             priority
           />
-        </div>
+        </div> */}
       </div>
       {/* start form */}
       {/* Booking Form */}
