@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import Navbar from "./components/homepage/navbar";
 import Hero from "./components/homepage/hero";
 import CarsShowcase from "./components/homepage/carsshowcase";
@@ -11,9 +11,9 @@ export default function HomePage() {
     <>
       <Navbar />
       <Hero />
-      <Suspense fallback={<div>Loading...</div>}>
-        <CarsShowcase />
-      </Suspense>
+      {/* <Suspense fallback={<div>Loading...</div>}> */}
+      <CarsShowcase />
+      {/* </Suspense> */}
       <BrandsBanner />
       <ServicesSection />
       <ContactSection />

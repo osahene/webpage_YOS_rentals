@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { FaRoute, FaCarSide, FaGlassCheers, FaClock } from "react-icons/fa";
+import { FaRoute, FaGlassCheers, FaClock } from "react-icons/fa";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
