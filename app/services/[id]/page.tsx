@@ -45,30 +45,30 @@ We offer customizable routes that can be tailored to your interests and schedule
     availableCars: [
       {
         name: "Toyota Corolla",
-        seats: 4,
-        price: "$49/hr",
+        seats: 5,
+        price: "¢650/day",
         image: "/image/corolla2013.png",
       },
       {
         name: "Honda Civic",
-        seats: 4,
-        price: "$59/hr",
+        seats: 5,
+        price: "¢720/day",
         image: "/image/hondacivic.png",
       },
       {
         name: "Toyota RAV4",
-        seats: 6,
-        price: "$79/hr",
+        seats: 5,
+        price: "¢79/hr",
         image: "/image/rav4.png",
       },
       {
-        name: "Mercedes S-Class",
-        seats: 4,
-        price: "$129/hr",
-        image: "/image/mercedes.jpg",
+        name: "Honda CRV",
+        seats: 5,
+        price: "¢800/day",
+        image: "/image/hondacrv.png",
       },
     ],
-    pricing: "Starting from $49/hour",
+    pricing: "Starting from ¢500/day",
   },
   {
     id: 2,
@@ -98,29 +98,29 @@ From the ceremony to the reception, we'll coordinate with your wedding planner t
       {
         name: "White Limousine",
         seats: 8,
-        price: "$299/hour",
+        price: "¢299/day",
         image: "/services/limo.jpg",
       },
       {
         name: "Rolls Royce Phantom",
         seats: 4,
-        price: "$499/hour",
+        price: "¢499/day",
         image: "/services/rolls.jpg",
       },
       {
         name: "Mercedes Maybach",
         seats: 4,
-        price: "$399/hour",
+        price: "¢399/day",
         image: "/services/maybach.jpg",
       },
       {
         name: "Vintage Convertible",
         seats: 2,
-        price: "$349/hour",
+        price: "¢349/day",
         image: "/services/vintage.jpg",
       },
     ],
-    pricing: "Packages from $999",
+    pricing: "Packages from ¢999",
   },
   {
     id: 3,
@@ -148,30 +148,30 @@ We're perfect for late-night events, early morning flights, emergency transporta
     availableCars: [
       {
         name: "Toyota Corolla",
-        seats: 4,
-        price: "$25/hour",
+        seats: 5,
+        price: "¢650/day",
         image: "/image/corolla2013.png",
       },
       {
         name: "Honda CRV",
         seats: 5,
-        price: "$35/hour",
+        price: "¢800/day",
         image: "/image/hondacrv.png",
       },
       {
         name: "Toyota RAV4",
-        seats: 6,
-        price: "$45/hour",
+        seats: 5,
+        price: "¢700/day",
         image: "/image/rav4.png",
       },
       {
-        name: "Van (8 seats)",
-        seats: 8,
-        price: "$65/hour",
-        image: "/services/van.jpg",
+        name: "Honda Civic",
+        seats: 5,
+        price: "¢650/day",
+        image: "/image/hondacivic.png"
       },
     ],
-    pricing: "Starting from $25/hour",
+    pricing: "Starting from ¢500/day",
   },
 ];
 
@@ -207,7 +207,8 @@ export default function ServiceDetailPage() {
             scrollTrigger: {
               trigger: section,
               start: "top 80%",
-              toggleActions: "play none none reverse",
+              toggleActions: "play none none none",
+              once: true,
             },
           }
         );
