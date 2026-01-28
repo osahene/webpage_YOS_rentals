@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaArrowDown,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
-  FaCar,
+  // FaCalendarAlt,
+  // FaMapMarkerAlt,
+  // FaCar,
 } from "react-icons/fa";
 import Typewriter from "../homepage/Typewriter";
 gsap.registerPlugin(ScrollTrigger);
@@ -16,15 +16,15 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
   const carRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
+  // const router = useRouter();
 
-  const formRef = useRef<HTMLDivElement>(null);
-  const [formData, setFormData] = useState({
-    pickup: "",
-    dropoff: "",
-    startDate: "",
-    endDate: "",
-  });
+  // const formRef = useRef<HTMLDivElement>(null);
+  // const [formData, setFormData] = useState({
+  //   pickup: "",
+  //   dropoff: "",
+  //   startDate: "",
+  //   endDate: "",
+  // });
 
   useLayoutEffect(() => {
     gsap.from(textRef.current, {
@@ -55,11 +55,11 @@ export default function Hero() {
     ScrollTrigger.refresh();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-  };
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   // Handle form submission
+  //   console.log("Form submitted:", formData);
+  // };
 
   return (
     <section
@@ -103,13 +103,12 @@ export default function Hero() {
       </div>
       {/* start form */}
       {/* Booking Form */}
-      <div
+      {/* <div
         ref={formRef}
         className="bg-white/80 w-[80%] backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl hero-content"
       >
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Pickup Location */}
             <div className="relative">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Pickup Location
@@ -128,7 +127,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Dropoff Location */}
             <div className="relative">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Dropoff Location
@@ -147,7 +145,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Start Date */}
             <div className="relative">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Start Date
@@ -165,7 +162,6 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* End Date */}
             <div className="relative">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 End Date
@@ -194,7 +190,7 @@ export default function Hero() {
             </button>
           </div>
         </form>
-      </div>
+      </div> */}
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 hero-content">
