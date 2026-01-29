@@ -359,7 +359,7 @@ export default function ServiceDetailPage() {
                       <FaUsers className="mr-2" />
                       <span>{car.seats} seats</span>
                     </div>
-                    <div className="text-blue-400 font-bold">{car.price}</div>
+                    {/* <div className="text-blue-400 font-bold">{car.price}</div> */}
                   </div>
                   <button className="w-full bg-linear-to-r from-blue-600 to-purple-600 text-white py-2 rounded-lg hover:shadow-lg transition-all duration-300">
                     Select This Vehicle
@@ -407,9 +407,9 @@ export default function ServiceDetailPage() {
               <div className="mt-8 p-6 bg-linear-to-r from-blue-900/30 to-purple-900/30 rounded-xl">
                 <div className="flex flex-col md:flex-row md:items-center justify-between">
                   <div>
-                    <h3 className="text-2xl font-bold text-white">
+                    {/* <h3 className="text-2xl font-bold text-white">
                       {service.pricing}
-                    </h3>
+                    </h3> */}
                     <p className="text-gray-300">
                       All inclusive - no hidden fees
                     </p>

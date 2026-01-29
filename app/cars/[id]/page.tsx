@@ -340,7 +340,8 @@ export default function CarDetailPage() {
               <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent animate-shimmer" />
             </div>
 
-            <span className="relative z-10">Rent Now @ {car.price}</span>
+            {/* <span className="relative z-10">Rent Now @ {car.price}</span> */}
+            <span className="relative z-10">Rent Now </span>
 
             {/* Pulsing ring */}
             <div

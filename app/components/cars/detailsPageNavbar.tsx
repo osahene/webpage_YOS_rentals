@@ -8,8 +8,8 @@ import {
   FaTimes,
   FaFacebook,
   FaInstagram,
-  FaTwitter,
-  FaYoutube,
+  FaTiktok,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { gsap } from "gsap";
 import Link from "next/link";
@@ -59,10 +59,10 @@ const DetailPageNavbar = ({
   }, [isMenuOpen]);
 
   const socialIcons = [
+    { icon: <FaWhatsapp />, href: "https://wa.me/+233546213027" },
     { icon: <FaFacebook />, href: "#" },
     { icon: <FaInstagram />, href: "#" },
-    { icon: <FaTwitter />, href: "#" },
-    { icon: <FaYoutube />, href: "#" },
+    { icon: <FaTiktok />, href: "https://vt.tiktok.com/ZSaHWCSGM/" },
   ];
 
   return (

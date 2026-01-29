@@ -92,7 +92,7 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
             <div className="space-y-4 text-gray-400">
-              <p>Patasi, Kumasi</p>
+              <p>Opposite Shell filling station, Mango Down, Patasi, Kumasi, Ghana</p>
               <p>+233 546 213 027</p>
               <p>info@yosrental.com</p>
               <p>24/7 Customer Support</p>

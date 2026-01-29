@@ -214,12 +214,12 @@ export default function CarsShowcase() {
 
                   <div className="flex justify-between items-center pt-4 border-t border-gray-700">
                     <div>
-                      <span className="font-bold text-2xl text-white">
+                      {/* <span className="font-bold text-2xl text-white">
                         {car.price}
                       </span>
                       <span className="text-gray-400 text-sm block">
                         per day
-                      </span>
+                      </span> */}
                     </div>
                     <button
                       onClick={() => router.push(`/cars/${car.id}`)}

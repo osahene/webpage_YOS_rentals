@@ -45,7 +45,7 @@ export default function Navbar() {
   }, []);
 
   const socialLinks = [
-    { icon: FaWhatsapp, href: "https://wa.me/yournumber", color: "#25D366" },
+    { icon: FaWhatsapp, href: "https://wa.me/+233546213027", color: "#25D366" },
     {
       icon: FaFacebookF,
       href: "https://facebook.com/yourpage",
@@ -58,7 +58,7 @@ export default function Navbar() {
     },
     {
       icon: FaTiktok,
-      href: "https://tiktok.com/@yourprofile",
+      href: "https://vt.tiktok.com/ZSaHWCSGM/",
       color: "#000000",
     },
   ];

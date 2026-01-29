@@ -107,7 +107,7 @@ export default function ContactSection() {
                   <div className="space-y-3 text-gray-600">
                     <p className="flex items-center justify-center">
                       <FaMapMarkerAlt className="mr-2" />
-                      Patasi, Kumasi
+                      Opposite Shell filling station, Mango Down, Patasi, Kumasi, Ghana
                     </p>
                     <p className="flex items-center justify-center">
                       <FaPhone className="mr-2" />
