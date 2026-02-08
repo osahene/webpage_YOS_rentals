@@ -13,13 +13,14 @@ import {
   FaGasPump,
   FaUsers,
 } from "react-icons/fa";
-import { cars } from "../utils/data/cars";
+import { useCars } from "@/app/carContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function VehiclesPage() {
   const router = useRouter();
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const {cars, loading, error} = useCars();
 
   useEffect(() => {
     // Animate cards on scroll
@@ -77,7 +78,7 @@ export default function VehiclesPage() {
 
         {/* Vehicles Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {cars.map((car, index) => (
+          {cars?.map((car, index) => (
             <div
               key={car.id}
               ref={(el) => {
@@ -92,13 +93,13 @@ export default function VehiclesPage() {
                     <h2 className="text-2xl font-bold text-white">
                       {car.name}
                     </h2>
-                    <div className="flex items-center mt-2">
+                    {/* <div className="flex items-center mt-2">
                       <div className="flex text-yellow-400">
                         {[...Array(5)].map((_, i) => (
                           <FaStar
                             key={i}
                             className={
-                              i < Math.floor(car.rating)
+                              i < Math.floor(car.rating || 0)
                                 ? "fill-current"
                                 : "fill-gray-600"
                             }
@@ -107,11 +108,11 @@ export default function VehiclesPage() {
                         ))}
                       </div>
                       <span className="ml-2 text-gray-300">{car.rating}</span>
-                    </div>
+                    </div> */}
                   </div>
-                  <div className="bg-blue-900/30 text-blue-300 px-4 py-2 rounded-full font-semibold">
+                  {/* <div className="bg-blue-900/30 text-blue-300 px-4 py-2 rounded-full font-semibold">
                     {car.price}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Car Image */}
@@ -121,6 +122,7 @@ export default function VehiclesPage() {
                     src={car.image}
                     alt={car.name}
                     fill
+                    unoptimized={true}
                     className="object-contain hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -137,13 +139,13 @@ export default function VehiclesPage() {
                     <div className="bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
                       <FaGasPump className="text-blue-400 text-xl" />
                     </div>
-                    <span className="text-gray-300 text-sm">Petrol</span>
+                    <span className="text-gray-300 text-sm">{car.fuel_type}</span>
                   </div>
                   <div className="text-center">
                     <div className="bg-blue-900/20 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-2">
                       <FaUsers className="text-blue-400 text-xl" />
                     </div>
-                    <span className="text-gray-300 text-sm">5 Seats</span>
+                    <span className="text-gray-300 text-sm">{car.seats} Seats</span>
                   </div>
                 </div>
 
@@ -167,12 +169,7 @@ export default function VehiclesPage() {
                 {/* Action Button */}
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-gray-400 text-sm block">
-                      Daily Rate
-                    </span>
-                    <span className="text-2xl font-bold text-white">
-                      {car.price}
-                    </span>
+                    
                   </div>
                   <button
                     onClick={() => handleViewDetails(car.id)}

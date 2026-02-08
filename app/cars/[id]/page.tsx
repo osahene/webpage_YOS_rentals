@@ -19,16 +19,17 @@ import {
   FaMusic,
   FaWifi,
 } from "react-icons/fa";
-import { cars } from "../../utils/data/cars";
+import { useCars } from "@/app/carContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function CarDetailPage() {
   const router = useRouter();
   const params = useParams();
+  const { cars } = useCars();
   const carId = parseInt(params.id as string);
-  const car = cars.find((c) => c.id === carId);
-
+  const car = cars?.find((c) => c.id = carId);
+  
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [isButtonGlowing, setIsButtonGlowing] = useState(true);
   const [showContactModal, setShowContactModal] = useState(false);
@@ -46,7 +47,7 @@ export default function CarDetailPage() {
 
   useEffect(() => {
     if (!car) {
-      router.push("/vehicles");
+      router.push("/cars");
       return;
     }
 
@@ -113,9 +114,9 @@ export default function CarDetailPage() {
 
   const features = [
     { icon: <FaCar />, label: "Type", value: "Sedan" },
-    { icon: <FaGasPump />, label: "Fuel", value: "Petrol" },
-    { icon: <FaUsers />, label: "Seats", value: "5" },
-    { icon: <FaCogs />, label: "Transmission", value: "Automatic" },
+    { icon: <FaGasPump />, label: "Fuel", value: car.fuel_type },
+    { icon: <FaUsers />, label: "Seats", value: car.seats },
+    { icon: <FaCogs />, label: "Transmission", value: car.transmission },
     { icon: <FaShieldAlt />, label: "Airbags", value: "6" },
     { icon: <FaSnowflake />, label: "AC", value: "Dual Zone" },
     { icon: <FaMusic />, label: "Audio", value: "Premium" },
@@ -148,7 +149,7 @@ export default function CarDetailPage() {
           </h1>
           <div className="flex items-center space-x-4">
             <div className="flex items-center">
-              {[...Array(5)].map((_, i) => (
+              {/* {[...Array(5)].map((_, i) => (
                 <FaStar
                   key={i}
                   className={`${
@@ -157,8 +158,8 @@ export default function CarDetailPage() {
                       : "text-gray-600"
                   }`}
                 />
-              ))}
-              <span className="ml-2 text-gray-300">{car.rating}</span>
+              ))} */}
+              {/* <span className="ml-2 text-gray-300">{car.rating}</span> */}
             </div>
             <span className="text-gray-400">•</span>
             <span className="text-gray-300">{car.year} Model</span>
@@ -174,6 +175,7 @@ export default function CarDetailPage() {
                 src={carImages[selectedImageIndex]}
                 alt={`${car.name} - View ${selectedImageIndex + 1}`}
                 fill
+                unoptimized={true}
                 className="object-contain"
                 priority
               />

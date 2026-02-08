@@ -52,9 +52,6 @@ export default function ContactSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission to your backend API
-    console.log("Contact form submitted:", formData);
-
     // Reset form
     setFormData({
       name: "",
