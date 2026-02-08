@@ -5,19 +5,17 @@ export interface Car {
   name: string;
   year: number;
   description: string;
+  car_type: string;
   image: string;
   images: string[];
   features: string[];
   make: string;
   model: string;
   color: string;
-  color_hex: string;
   license_plate: string;
   fuel_type: string;
   transmission: string;
   seats: number;
-  mileage: number;
-  status: string;
 }
 
 export interface ApiResponse<T> {
@@ -54,6 +52,7 @@ class apiService {
       name: `${car.make} ${car.model}`,
       year: car.year,
       description: car.description,
+      car_type: car.car_type ||'sedan',
     //   description: car.description || `${car.year} ${car.make} ${car.model} - ${car.color}`,
       image: car.images && car.images.length > 0 ? car.images[0] : '/default-car.jpg',
       images: car.images || [],
@@ -61,13 +60,10 @@ class apiService {
       make: car.make,
       model: car.model,
       color: car.color,
-      color_hex: car.color_hex,
       license_plate: car.license_plate,
-      fuel_type: car.fuel_type_display || car.fuel_type,
-      transmission: car.transmission_display || car.transmission,
+      fuel_type: car.fuel_type,
+      transmission: car.transmission,
       seats: car.seats,
-      mileage: car.mileage,
-      status: car.status_display || car.status,
       // You can add a rental price calculation here or fetch from another endpoint
     };
   }

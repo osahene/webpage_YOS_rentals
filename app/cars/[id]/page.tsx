@@ -102,7 +102,7 @@ export default function CarDetailPage() {
         <div className="text-center">
           <h1 className="text-3xl text-white mb-4">Car not found</h1>
           <button
-            onClick={() => router.push("/vehicles")}
+            onClick={() => router.push("/cars")}
             className="bg-blue-600 text-white px-6 py-3 rounded-full"
           >
             Browse Vehicles

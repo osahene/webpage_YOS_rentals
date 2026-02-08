@@ -69,11 +69,10 @@ const DetailPageNavbar = ({
     <>
       {/* Main Navbar */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
             ? "bg-gray-900/95 backdrop-blur-md shadow-2xl"
             : "bg-transparent"
-        }`}
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
@@ -90,13 +89,15 @@ const DetailPageNavbar = ({
             {!showBackArrow && <div className="w-20" />} {/* Spacer */}
             {/* Center: Title */}
             <div className="text-center">
-              <h1 className="text-xl md:text-2xl font-bold text-white">
-                {serviceName
-                  ? `${title} • ${serviceName}`
-                  : carName
-                  ? `${title} • ${carName}`
-                  : title}
-              </h1>
+              <a className="pointer cursor-pointer" onClick={() => router.push("/")} >
+                <h1 className="text-xl md:text-2xl font-bold text-white">
+                  {serviceName
+                    ? `${title} • ${serviceName}`
+                    : carName
+                      ? `${title} • ${carName}`
+                      : title}
+                </h1>
+              </a>
             </div>
             {/* Right: Social Icons (Desktop) / Menu (Mobile) */}
             <div className="flex items-center space-x-4">
@@ -128,9 +129,8 @@ const DetailPageNavbar = ({
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden ${
-          isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition-opacity duration-300 md:hidden ${isMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMenuOpen(false)}
       />
 
