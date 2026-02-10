@@ -55,7 +55,7 @@ export default function VehiclesPage() {
     };
   }, []);
 
-  const handleViewDetails = (carId: number) => {
+  const handleViewDetails = (carId: number| string) => {
     router.push(`/cars/${carId}`);
   };
 
