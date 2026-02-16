@@ -31,7 +31,6 @@ class apiService {
       const response = await $axios.get('/cars/public/');
       return response.data.map((car: any) => this.formatCarForFrontend(car));
     } catch (error) {
-      console.error('Error fetching cars:', error);
       throw error;
     }
   }
@@ -42,7 +41,6 @@ class apiService {
       const response = await $axios.get(`/cars/public/${id}/`);
       return this.formatCarForFrontend(response.data);
     } catch (error) {
-      console.error('Error fetching car:', error);
       throw error;
     }
   }
